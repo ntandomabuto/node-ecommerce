@@ -11,6 +11,11 @@ const fetchUserDb = async  (id)=>{
     return data
 }
 
+const insertUserDb = async (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile)=>{
+    let [data] = await pool.query('INSERT INTO user_table (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile) VALUES (?,?,?,?,?,?,?,?)',[firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile])
+    return data
+}
+
 
 
 

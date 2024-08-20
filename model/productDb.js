@@ -10,6 +10,11 @@ const getOneDb = async (id)=>{
     return data
 }
 
+const insertOneDb = async (prod_name,quantity,amount,category,prod_url)=>{
+    let [data] = await pool.query('insert into products_table (prod_name,quantity,amount,category,prod_url) values (?,?,?,?,?)',[prod_name,quantity,amount,category,prod_url])
+    return data
+}
+
 
 
 export {getDb,getOneDb,insertOneDb,deleteDb,updateDb}
