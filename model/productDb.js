@@ -15,6 +15,22 @@ const insertOneDb = async (prod_name,quantity,amount,category,prod_url)=>{
     return data
 }
 
+model
+
+
+
+const deleteDb = async(id)=>{
+    await pool.query('delete from products_table where prod_id =?',[id])
+}
+
+const updateDb = async(prod_name,quantity,amount,category,prod_url,id)=>{
+    let [data] = await pool.query('UPDATE products_table SET prod_name=?,quantity=?,amount=?,category=?,prod_url=? WHERE prod_id=?',[prod_name,quantity,amount,category,prod_url,id])
+    return data
+    
+}
+
+
+
 
 
 export {getDb,getOneDb,insertOneDb,deleteDb,updateDb}
