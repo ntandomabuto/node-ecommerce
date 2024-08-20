@@ -20,9 +20,6 @@ const insertUser = async(req,res)=>{
 }
 
 
-user
-
-
 
 const deleteUser = async (req,res)=>{
     res.json(await deleteUserDb(req.params.id))

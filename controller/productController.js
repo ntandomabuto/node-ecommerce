@@ -15,8 +15,6 @@ const insertOne = async (req,res)=>{
     res.send('Inserted a product')
 }
 
-controller
-
 
 
 const deleteOne = async(req,res)=>{

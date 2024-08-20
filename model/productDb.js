@@ -15,8 +15,6 @@ const insertOneDb = async (prod_name,quantity,amount,category,prod_url)=>{
     return data
 }
 
-model
-
 
 
 const deleteDb = async(id)=>{
