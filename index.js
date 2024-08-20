@@ -10,7 +10,7 @@ app.use(express.json())
 //     origin: '',
 //     credentials:true
 // }))
-// app.use(express.static('public'))
+app.use(express.static('public'))
 app.use('/user',useRoute)
 app.listen(port,()=>{
     console.log('http://localhost:'+port);
