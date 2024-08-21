@@ -13,6 +13,8 @@
 }
 
 #app {
+    display: grid;
+    grid-template-rows: auto minmax(100dvh, 100%) auto;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   color: #2c3e50;
@@ -20,10 +22,22 @@
 
 nav {
   padding: 3rem;
+  /* color:#2c3e50; */
 }
 
 #title {
     font-family: "Montserrat", system-ui;
     color: #2c3e50;
     font-size: 40px;
+}
+/* All images */
+img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+img[alt='banner-image'] {
+    width: 40rem;
 }
