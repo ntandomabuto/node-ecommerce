@@ -1,30 +1,56 @@
 import {pool} from '../config/config.js'
 
 const getUsersDb = async ()=>{
-    let [data] = await pool.query('SELECT * FROM user_table')
-    return data
+    try {
+        let [data] = await pool.query('SELECT * FROM user_table')
+        return data
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('failed to fetch users')
+    }
 }
 
 
 const fetchUserDb = async  (email)=>{
-    let [[data]] = await pool.query('SELECT * from user_table WHERE email_add=?',[email])
-    return data
+    try{
+        let [[data]] = await pool.query('SELECT * from user_table WHERE email_add=?',[email])
+        return data
+
+    } catch(err){
+        res.status(500).send('failed to fetch user')
+    }
 }
 
 const insertUserDb = async (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile)=>{
-    let [data] = await pool.query('INSERT INTO user_table (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile) VALUES (?,?,?,?,?,?,?,?)',[firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile])
-    return data
+    try{
+        let [data] = await pool.query('INSERT INTO user_table (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile) VALUES (?,?,?,?,?,?,?,?)',[firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile])
+        return data
+
+    } catch(err){
+        res.status(500).send('failed to insert user')
+    }
 }
 
 
 
 const deleteUserDb = async(id)=>{
-    await pool.query('DELETE from user_table WHERE user_id=?',[id])
+    try{
+        await pool.query('DELETE from user_table WHERE user_id=?',[id])
+
+    } catch(err){
+        res.status(500).send('failed to delete user')
+    }
 }
 
 const updateUserDb = async(firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile,id)=>{
-    let [data] = await pool.query('UPDATE user_table SET firstname =?,lastname=?,user_age=?,user_role=?, email_add=?, user_pass=?, user_profile=? WHERE user_id=?',[firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile,id])
-    return data
+    try{
+        let [data] = await pool.query('UPDATE user_table SET firstname =?,lastname=?,user_age=?,user_role=?, email_add=?, user_pass=?, user_profile=? WHERE user_id=?',[firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile,id])
+        return data
+
+    } catch(err){
+        res.status(500).send('failed to update user')
+    }
     
 }
 
