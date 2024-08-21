@@ -8,7 +8,7 @@ let port = process.env.PORT || 2024
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: 'http://localhost:8082/',
+    origin: 'http://localhost:8083',
     credentials:true
 }))
 app.use('/user',useRoute)
