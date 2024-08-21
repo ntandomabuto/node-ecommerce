@@ -42,6 +42,11 @@ const updateUser = async (req,res)=>{
     
 }
 
+const loginUser = (req,res)=>{
+    res.json({
+        message:"You signed in!",
+        token:req.body.token})
+}
 
 
-export {fetchUsers,fetchUser,insertUser,deleteUser,updateUser}
+export {fetchUsers,fetchUser,insertUser,deleteUser,updateUser,loginUser}

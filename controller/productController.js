@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt'
 import {getDb,getOneDb,insertOneDb,deleteDb,updateDb} from '../model/productDb.js'
 
 const getPro = async (req,res)=>{

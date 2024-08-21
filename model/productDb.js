@@ -30,5 +30,4 @@ const updateDb = async(prod_name,quantity,amount,category,prod_url,id)=>{
 
 
 
-
 export {getDb,getOneDb,insertOneDb,deleteDb,updateDb}
