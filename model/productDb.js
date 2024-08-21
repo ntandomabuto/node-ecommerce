@@ -11,7 +11,7 @@ const getOneDb = async (id)=>{
 }
 
 const insertOneDb = async (prod_name,quantity,amount,category,prod_url)=>{
-    let [data] = await pool.query('insert into products_table (prod_name,quantity,amount,category,prod_url) values (?,?,?,?,?)',[prod_name,quantity,amount,category,prod_url])
+    let [data] = await pool.query('insert into products_table (prod_name,quantity,amount,category,prod_url,prod_description) values (?,?,?,?,?,?)',[prod_name,quantity,amount,category,prod_url])
     return data
 }
 
@@ -22,7 +22,7 @@ const deleteDb = async(id)=>{
 }
 
 const updateDb = async(prod_name,quantity,amount,category,prod_url,id)=>{
-    let [data] = await pool.query('UPDATE products_table SET prod_name=?,quantity=?,amount=?,category=?,prod_url=? WHERE prod_id=?',[prod_name,quantity,amount,category,prod_url,id])
+    let [data] = await pool.query('UPDATE products_table SET prod_name=?,quantity=?,amount=?,category=?,prod_url=?,prod_description=? WHERE prod_id=?',[prod_name,quantity,amount,category,prod_url,prod_description,id])
     return data
     
 }

@@ -10,7 +10,7 @@ const getOne = async (req,res)=>{
 
 const insertOne = async (req,res)=>{
     let {prod_name,quantity,amount,category,prod_url} = req.body 
-    await insertOneDb(prod_name,quantity,amount,category,prod_url)
+    await insertOneDb(prod_name,quantity,amount,category,prod_url,prod_description)
     res.send('Inserted a product')
 }
 
@@ -22,15 +22,16 @@ const deleteOne = async(req,res)=>{
 }
 
 const updateOne = async (req,res)=>{
-    let {prod_name,quantity,amount,category,prod_url} = req.body
+    let {prod_name,quantity,amount,category,prod_url,prod_description} = req.body
     let products_table =  await getOneDb(req.params.id)
     prod_name? prod_name=prod_name: prod_name=products_table.prod_name
     quantity?quantity=quantity:quantity=products_table.quantity
     amount?amount=amount:amount=products_table.amount
     category?category=category:category=products_table.category
     prod_url?prod_url=prod_url:prod_url=products_table.prod_url
+    prod_description?prod_description=prod_description:prod_description=products_table.prod_description
 
-    await updateDb(prod_name,quantity,amount,category,prod_url,req.params.id)
+    await updateDb(prod_name,quantity,amount,category,prod_url,prod_description,req.params.id)
 }
 
 
