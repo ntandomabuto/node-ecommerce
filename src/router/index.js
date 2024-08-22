@@ -12,15 +12,25 @@ const routes = [
     component: () => import('@/views/AboutView.vue')
   },
   {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('@/views/AdminView.vue')
+  },
+  {
+    path: '/useradmin',
+    name: 'useradmin',
+    component: () => import('@/views/UsersAdminView.vue')
+  },
+  {
+    path: '/productsadmin',
+    name: 'productsadmin',
+    component: () => import('@/views/ProductsAdminView.vue')
+  },
+  {
     path: '/contact',
     name: 'contact',
     component: () => import('@/views/ContactView.vue')
   }
-  // {
-  //   path: '/users',
-  //   name: 'UserAdmin',
-  //   component: () => import('@/views/UsersAdmin.vue')
-  // }
 ]
 
 const router = createRouter({
@@ -29,6 +39,3 @@ const router = createRouter({
 })
 
 export default router
-
-
-
