@@ -10,7 +10,17 @@ const routes = [
     path: '/about',
     name: 'about',
     component: () => import('@/views/AboutView.vue')
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('@/views/ContactView.vue')
   }
+  // {
+  //   path: '/users',
+  //   name: 'UserAdmin',
+  //   component: () => import('@/views/UsersAdmin.vue')
+  // }
 ]
 
 const router = createRouter({
@@ -19,3 +29,6 @@ const router = createRouter({
 })
 
 export default router
+
+
+

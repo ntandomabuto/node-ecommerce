@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="row align-items-center" id="banner">
+    <div class="row align-items-center p-0" id="banner">
       <div class="col-md-6">
         <h1>YOUR PRODUCTS ARE GREAT.</h1>
         <button type="button">SHOP NOW</button>
