@@ -6,11 +6,11 @@ import productRoute from './routes/productRoute.js'
 let port = process.env.PORT || 2024
 
 const app = express()
-app.use(express.json())
 app.use(cors({
     origin: 'http://localhost:8083',
     credentials:true
 }))
+app.use(express.json())
 app.use('/user',useRoute)
 app.use('/product',productRoute)
 app.use(express.static('public'))
