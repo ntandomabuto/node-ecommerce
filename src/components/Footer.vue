@@ -1,25 +1,40 @@
 <template>
-  <div class="container-fluid">
+  <footer class="container-fluid p-3 text-center">
     <hr/>
-    <div class="container">
-            <a href="https://github.com/ntandomabuto/node-ecommerce.git"><i class="bi bi-github"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-        <p>Wired &copy; {{ cYear }}</p>
-    </div>
-  </div>
+    <a href="https://github.com/ntandomabuto/node-ecommerce.git" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <p>Wired &copy; {{ cYear }}</p>
+  </footer>
 </template>
 
-
 <script>
-export default  ({
-    name: "FooterComp",
-    data() {
-        return {
-            cYear: new Date().getUTCFullYear()
-        }
+export default {
+  name: "FooterComp",
+  data() {
+    return {
+      cYear: new Date().getUTCFullYear()
     }
-})
+  }
+}
 </script>
 
 <style scoped>
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: #f8f9fa;
+}
+
+i {
+  font-size: 1.2rem;
+  margin-inline: .2rem;
+}
+
+p {
+  margin: 0;
+}
 </style>

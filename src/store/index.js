@@ -56,9 +56,9 @@ export default createStore({
         })
       }
     },
-async register({ dispatch }, payload) {
+    async register({ dispatch }, payload) { 
     try {
-      const { data } = await axios.post(`${api}user/register`, payload);
+      const { data } = await axios.post(`${api}user/insert`, payload);
       const { msg, err, token } = data;
       if (token) {
         dispatch('fetchUsers');
@@ -79,8 +79,7 @@ async register({ dispatch }, payload) {
         position: toast.POSITION.BOTTOM_CENTER
       });
     }
-  }
-  ,
+    },
     async updateUser({ dispatch }, payload) {
       try {
         const { data } = await axios.patch(`${api}user/${payload.userID}`, payload)

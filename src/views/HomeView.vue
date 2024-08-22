@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-0 w-100">
     <div class="row align-items-center p-0" id="banner">
       <div class="col-md-6">
-        <h1>YOUR PRODUCTS ARE GREAT.</h1>
-        <button type="button">SHOP NOW</button>
+        <h1>Innovative Products That Enhance Your Life</h1>
+        <button type="button"><router-link to="/products">SHOP NOW</router-link></button>
       </div>
       <div class="col-md-6">
         <img src="https://ntandomabuto.github.io/img/banner-image.png" alt="banner-image" loading="lazy" id="watch">
@@ -61,8 +61,14 @@ button {
 #services {
   padding: 6rem;
   text-align: left;
+  background-color: white;
 }
 p {
   color: #a0a6ac;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
 }
 </style>
