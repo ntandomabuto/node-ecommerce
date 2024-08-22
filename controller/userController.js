@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import {getUsersDb,fetchUserDb,insertUserDb,deleteUserDb,updateUserDb} from '../model/userDb.js'
+import {getUsersDb,fetchUserDb,insertUserDb,deleteUserDb,updateUserDb,loginUserDb} from '../model/userDb.js'
 
 const fetchUsers = async(req,res)=>{
     res.json(await getUsersDb())
@@ -7,6 +7,9 @@ const fetchUsers = async(req,res)=>{
 
 const fetchUser = async(req,res)=>{
     res.json(await fetchUserDb(req.params.id))
+}
+const loginUser = async(req,res)=>{
+    res.json(await loginUserDb(req.params.id))
 }
 
 const insertUser = async(req,res)=>{
@@ -42,11 +45,11 @@ const updateUser = async (req,res)=>{
     
 }
 
-const loginUser = (req,res)=>{
-    res.json({
-        message:"You signed in!",
-        token:req.body.token})
-}
+// const loginUser = (req,res)=>{
+//     res.json({
+//         message:"You signed in!",
+//         token:req.body.token})
+// }
 
 
 export {fetchUsers,fetchUser,insertUser,deleteUser,updateUser,loginUser}

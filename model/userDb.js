@@ -12,7 +12,17 @@ const getUsersDb = async ()=>{
 }
 
 
-const fetchUserDb = async  (email)=>{
+const fetchUserDb = async  (id)=>{
+    try{
+        let [[data]] = await pool.query('SELECT * from user_table WHERE user_id=?',[id])
+        return data
+
+    } catch(err){
+        res.status(500).send('failed to fetch user')
+    }
+}
+
+const loginUserDb = async  (email)=>{
     try{
         let [[data]] = await pool.query('SELECT * from user_table WHERE email_add=?',[email])
         return data
@@ -57,4 +67,4 @@ const updateUserDb = async(firstname,lastname,user_age,gender,user_role,email_ad
 
 
 
-export {getUsersDb,fetchUserDb,insertUserDb,deleteUserDb,updateUserDb}
+export {getUsersDb,fetchUserDb,insertUserDb,deleteUserDb,updateUserDb,loginUserDb}

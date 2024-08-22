@@ -1,20 +1,21 @@
 import {compare} from "bcrypt";
 import jwt from 'jsonwebtoken'
 import {config} from 'dotenv'
-import {fetchUserDb} from '../model/userDb.js'
+// import {fetchUserDb} from '../model/userDb.js'
+import { loginUserDb } from "../model/userDb.js";
 
 config()
 
 const checkUser = async (req, res, next) => {
   try {
     const {email_add, user_pass} = req.body
-    let pass = (await fetchUserDb(email_add)).user_pass
+    let pass = (await loginUserDb(email_add)).user_pass
     // console.log(pass);
     compare(user_pass, pass, (err, result) => {
       if (err) throw err
       if (result == true) {
         let token = jwt.sign({email_add: email_add, user_pass: user_pass,}, process.env.SECRET_KEY)
-        console.log(token);
+        console.log('You signed in, here is your token:'+token);
         req.body.token = token
         next()
         return
