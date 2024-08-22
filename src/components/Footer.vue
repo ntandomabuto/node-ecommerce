@@ -21,9 +21,5 @@ export default  ({
 })
 </script>
 
-
 <style scoped>
-/* .row {
-    margin: 2rem;
-} */
 </style>

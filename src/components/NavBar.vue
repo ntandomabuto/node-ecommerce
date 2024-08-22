@@ -7,18 +7,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="../views/HomeView.vue">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="../views/AboutView.vue">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><router-link class="nav-link" to="/">Home</router-link></li>
+            <li class="nav-item"><router-link class="nav-link" to="/about">About</router-link></li>
+            <li class="nav-item"><router-link class="nav-link" to="/products">Products</router-link></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Users</a></li>
-                    <li><a class="dropdown-item" href="#">Products</a></li>
-                </ul>
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+              <ul class="dropdown-menu">
+                <li><router-link class="dropdown-item" to="/users">Users</router-link></li>
+                <li><router-link class="dropdown-item" to="/products">Products</router-link></li>
+              </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-fill"></i></a></li>
+
+            <li class="nav-item"><router-link class="nav-link" to="/contact">Contact</router-link></li>
+            <li class="nav-item"><a class="nav-link" to="/"><i class="bi bi-person-fill"></i></a></li>
           </ul>
         </div>
       </div>
