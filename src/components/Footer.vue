@@ -1,10 +1,10 @@
 <template>
-  <footer class="container-fluid p-3 text-center">
+  <div class="container-fluid p-3 text-center">
     <hr/>
     <a href="https://github.com/ntandomabuto/node-ecommerce.git" target="_blank"><i class="bi bi-github"></i></a>
     <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
     <p>Wired &copy; {{ cYear }}</p>
-  </footer>
+  </div>
 </template>
 
 <script>
@@ -23,10 +23,7 @@ export default {
   padding: 0;
   margin: 0;
   width: 100%;
-}
-
-footer {
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg,#2c3e50, #ecf0f1);
 }
 
 i {

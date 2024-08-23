@@ -98,17 +98,17 @@
       console.log(store);
       store.dispatch('register', payload )
       
-    //   fetch('/user', {
-    //     method: 'POST',
-    //     body: payload
-    //   })
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log('User saved successfully:', data);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error saving user:', error);
-    //   });
+      fetch('/user', {
+        method: 'POST',
+        body: payload
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('User saved successfully:', data);
+      })
+      .catch(error => {
+        console.error('Error saving user:', error);
+      });
     },
     mounted() {
       const saveButton = document.getElementById('saveUser');

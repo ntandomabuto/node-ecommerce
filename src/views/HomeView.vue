@@ -34,19 +34,6 @@
 </script>
 
 <style scoped>
-#banner {
-  margin: 0;
-  padding: 0;
-  background-color: #e2e7ec;
-}
-
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 70px;
-  color: bla;
-}
-
 button {
   padding: .5rem;
   width: 15rem;
@@ -56,12 +43,6 @@ button {
 
 .icon-color {
   color: #7dabda;
-}
-
-#services {
-  padding: 6rem;
-  text-align: left;
-  background-color: white;
 }
 p {
   color: #a0a6ac;

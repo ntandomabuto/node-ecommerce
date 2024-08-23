@@ -17,6 +17,11 @@ export default {
 
 <style scoped>
 .card {
+    background-color: transparent;
+    border: none;
     width: 15rem;
+}
+.card-header {
+    background-color: none;
 }
 </style>

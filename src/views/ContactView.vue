@@ -1,8 +1,9 @@
 <template>
   <div class="container-fluid" id="contact-page">
-    <h2>CONTACT US</h2>
+    <h2>CONTACT</h2>
     <div class="row">
       <div class="col-md-6 contact-form">
+        <h4>MESSAGE US</h4>
         <form action="https://formspree.io/f/myzgnzra" method="POST">
           <div class="form-group">
             <div class="input-row">
@@ -21,26 +22,35 @@
             <button type="reset">Clear</button>
           </div>
         </form>
-      </div>
-      <div class="col-md-6">
-        <h2>HOW TO REACH US:</h2>
-        <div class="details" id="details">
-          <div class="info" id="info-email">
-            <p><i class="bi bi-envelope"></i>contact@wiredelectronics.com</p>
+        <div class="col-md-6">
+          <h4>HOW TO REACH US</h4>
+          <div class="details" id="details">
+            <div class="info" id="info-email">
+              <p><i class="bi bi-envelope"></i> contact@wiredelectronics.com</p>
+            </div>
+            <div class="info" id="info-call">
+              <p><i class="bi bi-telephone"></i> +27 21 123 4567</p>
+            </div>
+            <div class="info" id="info-address">
+              <p><i class="bi bi-geo-alt"></i> The Pinnacle Building</p>
+              <p>Corner of Strand and Burg Streets</p>
+              <p>Cape Town, 8001</p>
+            </div>
           </div>
-          <div class="info" id="info-call">
-            <p><i class="bi bi-telephone"></i>+27 21 123 4567</p>
-          </div>
-          <div class="info" id="info-address">
-            <p><i class="bi bi-geo-alt"></i>The Pinnacle Building</p>
-            <p>Corner of Strand and Burg Streets</p>
-            <p>Cape Town, 8001</p>
-          </div>
+        </div>
+        <div class="newsletter-signup">
+          <h4>Wired Electronics Newsletter</h4>
+          <p>Sign up to receive updates, subscription offers and alerts on sales</p>
+          <form action="https://formspree.io/f/myzgnzra" method="POST">
+            <input type="email" name="newsletter_email" placeholder="Enter your email" required>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <style scoped>
 h2 {
@@ -107,17 +117,6 @@ button[type="reset"]:hover {
   color: white;
 }
 
-.details {
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.info {
-  text-align: left;
-}
-
 .col-md-6 {
   display: flex;
   flex-direction: column;
@@ -126,5 +125,6 @@ button[type="reset"]:hover {
 .container-fluid {
   padding: 0 15px;
 }
+  
 </style>
 
