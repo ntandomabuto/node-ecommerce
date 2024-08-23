@@ -16,4 +16,4 @@ app.use('/product',productRoute)
 app.use(express.static('public'))
 app.listen(port,()=>{
     console.log('http://localhost:'+port);
-})
+})  
