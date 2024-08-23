@@ -17,8 +17,8 @@
     font-family: "Montserrat", sans-serif;
     text-align: center;
     color: #2c3e50;
-    /* background: url(https://erin-caitlin.github.io/all-images/images/img5.jpg) no-repeat center;
-  object-fit: cover; */
+    background: url(https://erin-caitlin.github.io/all-images/images/img5.jpg) no-repeat center;
+    object-fit: cover;
 }
 
 #title {
