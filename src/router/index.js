@@ -12,6 +12,16 @@ const routes = [
     component: () => import('@/views/AboutView.vue')
   },
   {
+    path: '/products',
+    name: 'products',
+    component: () => import('@/views/ProductsView.vue')
+  },
+  {
+    path: '/singleproducts',
+    name: 'singleproducts',
+    component: () => import('@/views/SingleProductView.vue')
+  },
+  {
     path: '/admin',
     name: 'admin',
     component: () => import('@/views/AdminView.vue')
@@ -25,16 +35,6 @@ const routes = [
     path: '/productsadmin',
     name: 'productsadmin',
     component: () => import('@/views/ProductsAdminView.vue')
-  },
-  {
-    path: '/products',
-    name: 'products',
-    component: () => import('@/views/ProductsView.vue')
-  },
-  {
-    path: '/singleproducts',
-    name: 'singleproducts',
-    component: () => import('@/views/SingleProductView.vue')
   },
   {
     path: '/contact',

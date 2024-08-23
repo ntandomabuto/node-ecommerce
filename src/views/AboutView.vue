@@ -1,9 +1,8 @@
 <template>
   <section id="about" class="about-section">
     <div class="container">
-      <div class="row">
-        <div class="col about-col">
-          <h2 class="section-title">ABOUT US</h2>
+      <h2 class="section-title">ABOUT US</h2>
+        <div class="about-col">
           <p class="about-text">
             Wired is a leading electronics company specializing in high-tech watches and cell phones. Our mission is to deliver cutting-edge technology and exceptional user experiences through our innovative products.
           </p>
@@ -11,7 +10,7 @@
             Established in 2010, we have built a reputation for quality and reliability in the electronics industry. Our dedicated team is committed to staying ahead of technological trends and meeting the needs of our customers with precision and care.
           </p>
         </div>
-        <div class="col values-col">
+        <div class="values-col">
           <h2 class="section-title">OUR VALUES</h2>
           <div class="values">
             <div class="value-item">
@@ -28,17 +27,16 @@
             </div>
           </div>
         </div>
-      </div>
       <div class="team-section">
         <h3 class="section-title">MEET THE TEAM</h3>
         <div class="team">
           <div class="team-member">
-            <img src="path-to-team-member-photo1.jpg" alt="Erin Caitlin Williams" class="team-photo">
+            <img src="https://erin-caitlin.github.io/nodeEOMP.images/images/Erin.jpg" alt="Erin Caitlin Williams" class="team-photo">
             <h5>Erin Caitlin Williams</h5>
             <p>Erin brings over a decade of experience in design and creative direction to the team, ensuring that every project meets the highest standards of quality and innovation.</p>
           </div>
           <div class="team-member">
-            <img src="path-to-team-member-photo2.jpg" alt="Ntando Mabuto" class="team-photo">
+            <img src="https://erin-caitlin.github.io/nodeEOMP.images/images/Ntando.png" alt="Ntando Mabuto" class="team-photo">
             <h5>Ntando Mabuto</h5>
             <p>Ntando's expertise in visual design and his keen eye for detail help transform concepts into stunning visual experiences that resonate with audiences.</p>
           </div>
@@ -49,16 +47,13 @@
 </template>
 
 <style scoped>
-/* Color Variables */
 :root {
-  --primary-color: #007bff; /* Primary color */
-  --secondary-color: #f0f0f0; /* Light background */
-  --text-dark: #333; /* Dark text color */
-  --text-light: #555; /* Light text color */
-  --accent-color: #ff6f61; /* Accent color for emphasis */
+  --primary-color: #007bff; 
+  --secondary-color: #f0f0f0; 
+  --text-dark: #333; 
+  --text-light: #555; 
 }
 
-/* Container and Section Styling */
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -130,6 +125,7 @@
 }
 
 .team-section {
+  background-color: transparent;
   margin-top: 4rem;
   text-align: center;
 }
@@ -145,12 +141,16 @@
   flex: 1;
   min-width: 250px;
   text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
 }
 
 .team-photo {
   width: 180px;
   height: 180px;
   object-fit: cover;
+  object-position: top;
   border-radius: 50%;
   border: 5px solid var(--primary-color);
   margin-bottom: 1rem;

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#" id="title">Wired</a>
+      <router-link class="navbar-brand" to="" id="title"><img src="https://erin-caitlin.github.io/nodeEOMP.images/images/Brand Logo.png" alt="logo" loading="lazy"></router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,9 +31,14 @@ export default {
 </script>
 
 <style scoped>
+img {
+  width: 5rem;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
 
 .navbar {
-  background: linear-gradient(135deg, #ecf0f1, #2c3e50 );
+  background:#2c3e50;
 }
 
 .nav-link {

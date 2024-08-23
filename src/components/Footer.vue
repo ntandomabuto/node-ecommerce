@@ -23,7 +23,7 @@ export default {
   padding: 0;
   margin: 0;
   width: 100%;
-  background: linear-gradient(135deg,#2c3e50, #ecf0f1);
+  background:#2c3e50;
 }
 
 i {
