@@ -5,8 +5,7 @@ import 'vue3-toastify/dist/index.css'
 import router from '@/router'
 
 const api = 'https://node-ecommerce-iqje.onrender.com/'
-
-axios.defaults.withCredentials = true
+// https://node-ecommerce-iqje.onrender.com
 
 export default createStore({
   state: {
@@ -66,7 +65,6 @@ export default createStore({
           autoClose: 2000,
           position: toast.POSITION.BOTTOM_CENTER
         });
-        router.push({ name: 'login' });
       } else {
         toast.error(`${err}`, {
           autoClose: 2000,
@@ -120,7 +118,10 @@ export default createStore({
     },
     async fetchProducts({ commit }) {
       try {
-        const { data } = await axios.get(`${api}product`)
+        const data = await (await axios.get(`${api}product`)).data
+        
+        console.log(data);
+        
         if (data) {
           commit('setProducts', data)
         } else {
