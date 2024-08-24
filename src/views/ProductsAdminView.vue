@@ -19,28 +19,26 @@
                   <input type="text" class="form-control" id="productName" name="productName" required>
                 </div>
                 <div class="mb-3">
+                  <label for="productQuantity" class="form-label">Quantity</label>
+                  <input type="number" class="form-control" id="productQuantity" name="productQuantity" required>
+                </div>
+                <div class="mb-3">
                   <label for="productAmount" class="form-label">Amount</label>
                   <input type="text" class="form-control" id="productAmount" name="productAmount" required>
                 </div>
+                
                 <div class="mb-3">
-                  <label for="productAge" class="form-label">Age</label>
-                  <input type="number" class="form-control" id="productAge" name="productAge" required>
+                  <label for="productCategory" class="form-label">Category</label>
+                  <input type="text" class="form-control" id="productCategory" name="productCategory" required>
                 </div>
                 <div class="mb-3">
-                  <label for="productGender" class="form-label">Gender</label>
-                  <input type="text" class="form-control" id="productGender" name="productGender" required>
+                  <label for="productImage" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="productImage" name="productImage" required>
                 </div>
+                
                 <div class="mb-3">
-                  <label for="productEmail" class="form-label">Email Address</label>
-                  <input type="email" class="form-control" id="productEmail" name="productEmail" required>
-                </div>
-                <div class="mb-3">
-                  <label for="productPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="productPassword" name="productPassword" required>
-                </div>
-                <div class="mb-3">
-                  <label for="productProfile" class="form-label">Profile</label>
-                  <input type="file" class="form-control" id="productProfile" name="productProfile">
+                  <label for="productDescription" class="form-label">Image</label>
+                  <input type="file" class="form-control" id="productDescription" name="productDescription">
                 </div>
               </form>
             </div>
@@ -94,12 +92,6 @@
       const saveButton = document.getElementById('saveProduct');
       if (saveButton) {
         saveButton.addEventListener('click', this.saveProduct);
-      }
-    },
-    beforeUnmount() {
-      const saveButton = document.getElementById('saveProduct');
-      if (saveButton) {
-        saveButton.removeEventListener('click', this.saveProduct);
       }
     }
   }

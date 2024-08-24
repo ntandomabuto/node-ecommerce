@@ -1,13 +1,18 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import { toast } from 'vue3-toastify'
+/* eslint-disable*/
 import 'vue3-toastify/dist/index.css'
 import router from '@/router'
 
 const api = 'https://node-ecommerce-iqje.onrender.com/'
+<<<<<<< HEAD
 
+=======
+>>>>>>> b919f0f18f3054cac3d98631b7fa567d00447e8a
 export default createStore({
   state: {
+    // users: null,
     user: null,
     products: null,
     recentProducts: null,
@@ -39,6 +44,10 @@ export default createStore({
           position: toast.POSITION.BOTTOM_CENTER
         })
       }
+    },
+    async addUser({commit},user_id){
+      let {data}= await axios.post(`${api}user/insert`,{id:user_id})
+      console.log(data);
     },
     async fetchUser({ commit }, id) {
       try {
