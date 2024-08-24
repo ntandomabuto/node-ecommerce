@@ -17,9 +17,10 @@ const routes = [
     component: () => import('@/views/ProductsView.vue')
   },
   {
-    path: '/singleproducts',
-    name: 'singleproducts',
-    component: () => import('@/views/SingleProductView.vue')
+    path: '/products/:id',
+    name: 'singleproduct',
+    component: () => import('@/views/SingleProductView.vue'),
+    props: true
   },
   {
     path: '/admin',
@@ -41,7 +42,6 @@ const routes = [
     name: 'contact',
     component: () => import('@/views/ContactView.vue')
   }
-
 ]
 
 const router = createRouter({

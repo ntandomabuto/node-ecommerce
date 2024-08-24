@@ -5,7 +5,6 @@ import 'vue3-toastify/dist/index.css'
 import router from '@/router'
 
 const api = 'https://node-ecommerce-iqje.onrender.com/'
-// https://node-ecommerce-iqje.onrender.com
 
 export default createStore({
   state: {
@@ -23,9 +22,6 @@ export default createStore({
     },
     setProducts(state, value) {
       state.products = value
-    },
-    setRecentProducts(state, value) {
-      state.recentProducts = value
     },
     setProduct(state, value) {
       state.product = value
@@ -118,10 +114,7 @@ export default createStore({
     },
     async fetchProducts({ commit }) {
       try {
-        const data = await (await axios.get(`${api}product`)).data
-        
-        console.log(data);
-        
+        const { data } = await axios.get(`${api}product`)
         if (data) {
           commit('setProducts', data)
         } else {
@@ -134,33 +127,13 @@ export default createStore({
         })
       }
     },
-    async recentProducts({ commit }) {
-      try {
-        const { data } = await axios.get(`${api}product/recent`)
-        const { results, msg } = data
-        if (results) {
-          commit('setRecentProducts', results)
-        } else {
-          toast.error(`${msg}`, {
-            autoClose: 2000,
-            position: toast.POSITION.BOTTOM_CENTER
-          })
-        }
-      } catch (e) {
-        toast.error(`${e.message}`, {
-          autoClose: 2000,
-          position: toast.POSITION.BOTTOM_CENTER
-        })
-      }
-    },
     async fetchProduct({ commit }, id) {
       try {
         const { data } = await axios.get(`${api}product/${id}`)
-        const { result, msg } = data
-        if (result) {
-          commit('setProduct', result)
+        if (data.result) {
+          commit('setProduct', data.result)
         } else {
-          toast.error(`${msg}`, {
+          toast.error(`${data.msg}`, {
             autoClose: 2000,
             position: toast.POSITION.BOTTOM_CENTER
           })

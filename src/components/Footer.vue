@@ -33,5 +33,6 @@ i {
 
 p {
   margin: 0;
+  color: white;
 }
 </style>

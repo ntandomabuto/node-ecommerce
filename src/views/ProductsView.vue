@@ -26,7 +26,7 @@
               <div class="product-info">
                 <p class="product-description">{{ product.description }}</p>
                 <button class="btn view-product">
-                  <router-link :to="`/singleproducts/${product.id}`" class="link-no-decoration">
+                  <router-link :to="`/products/${product.id}`" class="link-no-decoration">
                     View {{ product.category }}
                   </router-link>
                 </button>

@@ -2,31 +2,31 @@
   <section id="about" class="about-section">
     <div class="container">
       <h2 class="section-title">ABOUT US</h2>
-        <div class="about-col">
-          <p class="about-text">
-            Wired is a leading electronics company specializing in high-tech watches and cell phones. Our mission is to deliver cutting-edge technology and exceptional user experiences through our innovative products.
-          </p>
-          <p class="about-text">
-            Established in 2010, we have built a reputation for quality and reliability in the electronics industry. Our dedicated team is committed to staying ahead of technological trends and meeting the needs of our customers with precision and care.
-          </p>
-        </div>
-        <div class="values-col">
-          <h2 class="section-title">OUR VALUES</h2>
-          <div class="values">
-            <div class="value-item">
-              <h4>Innovation</h4>
-              <p>At Wired, we are dedicated to pushing the boundaries of technology. We continually innovate to provide state-of-the-art electronic watches and cell phones that enhance your everyday life.</p>
-            </div>
-            <div class="value-item">
-              <h4>Quality</h4>
-              <p>We are committed to excellence in every product we offer. Each electronic watch and cell phone undergoes rigorous testing to ensure top-notch performance and durability.</p>
-            </div>
-            <div class="value-item">
-              <h4>Customer-Centric Design</h4>
-              <p>Our products are designed with you in mind. We focus on creating user-friendly, stylish, and functional electronics that meet your needs and exceed your expectations.</p>
-            </div>
+      <div class="about-col">
+        <p class="about-text">
+          Wired is a leading electronics company specializing in high-tech watches and cell phones. Our mission is to deliver cutting-edge technology and exceptional user experiences through our innovative products. We focus on precision engineering and advanced features to redefine the possibilities of modern electronics.
+        </p>
+        <p class="about-text">
+          Founded in 2010, we’ve built a solid reputation for quality and reliability. Our dedicated team, including Erin Caitlin Williams and Ntando Mabuto, is committed to staying ahead of technological trends and meeting our customers' needs with precision and care. As technology evolves, we strive to lead the way with products that enhance daily life and set new industry standards.
+        </p>
+      </div>
+      <div class="values-col">
+        <h2 class="section-title">OUR VALUES</h2>
+        <div class="values">
+          <div class="value-item">
+            <h4>Innovation</h4>
+            <p>At Wired, we are dedicated to pushing the boundaries of technology. We continually innovate to provide state-of-the-art electronic watches and cell phones that enhance your everyday life.</p>
+          </div>
+          <div class="value-item">
+            <h4>Quality</h4>
+            <p>We are committed to excellence in every product we offer. Each electronic watch and cell phone undergoes rigorous testing to ensure top-notch performance and durability.</p>
+          </div>
+          <div class="value-item">
+            <h4>Customer-Centric Design</h4>
+            <p>Our products are designed with you in mind. We focus on creating user-friendly, stylish, and functional electronics that meet your needs and exceed your expectations.</p>
           </div>
         </div>
+      </div>
       <div class="team-section">
         <h3 class="section-title">MEET THE TEAM</h3>
         <div class="team">
@@ -47,60 +47,51 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
   --primary-color: #007bff; 
   --secondary-color: #f0f0f0; 
+  --background-color: #ffffff;
   --text-dark: #333; 
   --text-light: #555; 
+  --font-family: 'Roboto', sans-serif;
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .about-section {
-  padding: 5rem 0;
+  padding: 4rem 2rem; 
   background-color: var(--secondary-color);
   color: var(--text-dark);
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
-
-.col {
-  flex: 1;
-  min-width: 300px;
-}
-
-.about-col {
-  padding: 1rem;
-}
-
-.values-col {
-  padding: 1rem;
+.about-col, .values-col, .team-section {
+  background-color: var(--background-color); 
+  border-radius: 8px; 
+  padding: 2rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 2rem; 
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2rem; 
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--primary-color);
   text-transform: uppercase;
-  border-bottom: 3px solid var(--primary-color);
-  display: inline-block;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.5rem;
 }
 
-.about-text {
-  font-size: 1.125rem;
-  line-height: 1.8;
+.about-text, .value-item p {
+  font-size: 1rem; 
+  line-height: 1.6;
   color: var(--text-light);
-  margin-bottom: 1.5rem;
 }
 
 .values {
@@ -108,25 +99,17 @@
 }
 
 .value-item {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .value-item h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem; 
   font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
-.value-item p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-light);
-}
-
 .team-section {
-  background-color: transparent;
-  margin-top: 4rem;
   text-align: center;
 }
 
@@ -141,31 +124,30 @@
   flex: 1;
   min-width: 250px;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-light);
+  font-size: 0.875rem; 
+  line-height: 1.5;
 }
 
 .team-photo {
-  width: 180px;
-  height: 180px;
+  width: 160px; 
+  height: 160px;
   object-fit: cover;
   object-position: top;
   border-radius: 50%;
-  border: 5px solid var(--primary-color);
+  border: 4px solid var(--primary-color); 
   margin-bottom: 1rem;
 }
 
 .team-member h5 {
-  font-size: 1.25rem;
+  font-size: 1.125rem; 
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .team-member p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.875rem; 
+  line-height: 1.5;
   color: var(--text-light);
 }
 </style>
