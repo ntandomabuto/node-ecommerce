@@ -13,15 +13,15 @@
       <div class="values-col">
         <h2 class="section-title">OUR VALUES</h2>
         <div class="values">
-          <div class="value-item">
+          <div class="value-item" data-aos="fade-up">
             <h4>Innovation</h4>
             <p>At Wired, we are dedicated to pushing the boundaries of technology. We continually innovate to provide state-of-the-art electronic watches and cell phones that enhance your everyday life.</p>
           </div>
-          <div class="value-item">
+          <div class="value-item" data-aos="fade-up">
             <h4>Quality</h4>
             <p>We are committed to excellence in every product we offer. Each electronic watch and cell phone undergoes rigorous testing to ensure top-notch performance and durability.</p>
           </div>
-          <div class="value-item">
+          <div class="value-item" data-aos="fade-up">
             <h4>Customer-Centric Design</h4>
             <p>Our products are designed with you in mind. We focus on creating user-friendly, stylish, and functional electronics that meet your needs and exceed your expectations.</p>
           </div>
@@ -45,6 +45,20 @@
     </div>
   </section>
 </template>
+
+<script>
+import AOS from 'aos';
+
+export default {
+  mounted() {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true 
+    });
+  }
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');

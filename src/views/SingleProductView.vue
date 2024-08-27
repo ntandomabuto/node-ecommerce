@@ -43,9 +43,15 @@ export default {
     id: 'fetchProduct'
   },
   methods: {
-    fetchProduct() {
+    async fetchProduct() {
       if (this.id) {
-        this.$store.dispatch('fetchProduct', this.id); 
+        console.log('Fetching product with ID:', this.id); 
+        try {
+          await this.$store.dispatch('fetchProduct', this.id); 
+          console.log('Product fetched:', this.product); 
+        } catch (error) {
+          console.error('Error fetching product:', error);
+        }
       }
     }
   },

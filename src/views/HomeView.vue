@@ -11,20 +11,20 @@
     </div>
     <div class="row" id="services">
       <div class="col">
-        <h5><i class="bi bi-cart3 icon-color"></i>FREE DELIVERY</h5>
-        <p>Get free shipping on orders over R900. Shop now and save!</p>
+        <h5 data-aos="fade-up"><i class="bi bi-cart3 icon-color"></i>FREE DELIVERY</h5>
+        <p data-aos="fade-up">Get free shipping on orders over R900. Shop now and save!</p>
       </div>
       <div class="col">
-        <h5><i class="bi bi-award icon-color"></i>QUALITY GUARANTEE</h5>
-        <p>Shop with confidence—our products meet the highest standards or your money back!</p>
+        <h5 data-aos="fade-up"><i class="bi bi-award icon-color"></i>QUALITY GUARANTEE</h5>
+        <p data-aos="fade-up">Shop with confidence—our products meet the highest standards or your money back!</p>
       </div>
       <div class="col">
-        <h5><i class="bi bi-tag icon-color"></i>DAILY OFFERS</h5>
-        <p>New deals every day—discover fresh savings daily!</p>
+        <h5  data-aos="fade-up"><i class="bi bi-tag icon-color"></i>DAILY OFFERS</h5>
+        <p data-aos="fade-up">New deals every day—discover fresh savings daily!</p>
       </div>
       <div class="col">
-        <h5><i class="bi bi-shield-plus icon-color"></i> 100% SECURE PAYMENT</h5>
-        <p>Enjoy peace of mind with fully protected and encrypted transactions on every purchase.</p>
+        <h5 data-aos="fade-up"><i class="bi bi-shield-plus icon-color"></i> 100% SECURE PAYMENT</h5>
+        <p data-aos="fade-up">Enjoy peace of mind with fully protected and encrypted transactions on every purchase.</p>
       </div>
     </div>
   </div>
