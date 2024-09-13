@@ -3,33 +3,19 @@
       <div v-if="product" class="product-details">
         <h1 class="product-title">{{ product?.productName }}</h1>
         <Card class="product-card">
-          <template #cardHeader>
-            <img :src="product.productUrl" :alt="product.productName" class="card-image">
-          </template>
-          <template #cardBody>
-            <div class="card-content">
-              <p class="card-quantity">Description: <span>{{ product.productDescription }}</span></p>
-              <p class="card-quantity">Quantity: <span>{{ product.quantity }}</span></p>
-              <p class="card-amount">Price: <span>R{{ product.amount }}</span></p>
-              <div class="button-container">
-                <router-link to="/products">
-                  <button class="back-button">← Go Back</button>
-                </router-link>
-              </div>
-            </div>
-          </template>
+         
         </Card>
       </div>
-      <Spinner v-else />
+      <!-- <Spinner v-else /> -->
     </div>
   </template>
     <script>
     import Card from '@/components/Card.vue';
-    import Spinner from '@/components/Spinner.vue';
+    // import Spinner from '@/components/Spinner.vue';
     export default {
       components: {
         Card,
-        Spinner
+        // Spinner
       },
       computed: {
         product() {
@@ -37,7 +23,7 @@
         }
       },
       mounted() {
-        this.$store.dispatch("fetchProduct", this.$route.params.id); 
+        this.$store.dispatch('fetchProduct', this.$route.params.id); 
       }
     }
     </script>

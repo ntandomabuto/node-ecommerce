@@ -33,5 +33,9 @@ i {
 
 p {
   margin: 0;
+  color: #dddd;
+}
+a i{
+  color: #dddd;
 }
 </style>
