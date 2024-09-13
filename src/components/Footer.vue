@@ -37,5 +37,6 @@ p {
 }
 a i{
   color: #dddd;
+  color: white;
 }
 </style>
