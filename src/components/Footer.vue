@@ -33,6 +33,10 @@ i {
 
 p {
   margin: 0;
+  color: #dddd;
+}
+a i{
+  color: #dddd;
   color: white;
 }
 </style>
