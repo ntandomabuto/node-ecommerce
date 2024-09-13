@@ -33,16 +33,13 @@ const loginUserDb = async  (email)=>{
 }
 
 const insertUserDb = async (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile)=>{
-    try{
-        let [data] = await pool.query('INSERT INTO user_table (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile) VALUES (?,?,?,?,?,?,?,?)',[firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile])
-        return data
+    let defaultUserRole = user_role || 'user';
+    let defaultUserProfile = user_profile || 'https://codjoelmayer.github.io/projectImages/images/profile-Image.png';
 
-    } catch(err){
-        res.status(500).send('failed to insert user')
-    }
+        let [data] = await pool.query('INSERT INTO user_table (firstname,lastname,user_age,gender,user_role,email_add,user_pass,user_profile) VALUES (?,?,?,?,?,?,?,?)',[firstname,lastname,user_age,gender,defaultUserRole,email_add,user_pass,defaultUserProfile ])
+        // return data
+
 }
-
-
 
 const deleteUserDb = async(id)=>{
     try{
