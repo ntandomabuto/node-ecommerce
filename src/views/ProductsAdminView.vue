@@ -26,16 +26,6 @@
                 <input type="number" class="form-control" id="productQuantity" name="productQuantity" required>
               </div>
               <div class="mb-3">
-                <label for="productAge" class="form-label">Age</label>
-                <input type="number" class="form-control" id="productAge" name="productAge" required>
-              </div>
-              <div class="mb-3">
-                <label for="productGender" class="form-label">Gender</label>
-                <input type="text" class="form-control" id="productGender" name="productGender" required>
-              </div>
-              <div class="mb-3">
-                <label for="productEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="productEmail" name="productEmail" required>
                 <label for="productCategory" class="form-label">Category</label>
                 <input type="text" class="form-control" id="productCategory" name="productCategory" required>
               </div>
@@ -112,4 +102,3 @@ export default {
   }
 }
 </script>
-
