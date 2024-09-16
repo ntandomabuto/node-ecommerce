@@ -76,6 +76,8 @@ export default {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 15px;
+  /* background: #efeaea; */
+  /* opacity: .9; */
 }
 
 .about-section {
@@ -125,6 +127,7 @@ export default {
 
 .team-section {
   text-align: center;
+  background: #ffffff;
 }
 
 .team {
@@ -132,6 +135,7 @@ export default {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+
 }
 
 .team-member {
@@ -140,6 +144,8 @@ export default {
   text-align: center;
   font-size: 0.875rem; 
   line-height: 1.5;
+  box-shadow: 1px 1px 5px 1px black ;
+
 }
 
 .team-photo {
