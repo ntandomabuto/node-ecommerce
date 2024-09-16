@@ -18,6 +18,7 @@
         <h5 data-aos="fade-up"><i class="bi bi-award icon-color"></i>QUALITY GUARANTEE</h5>
         <p data-aos="fade-up">Shop with confidence—our products meet the highest standards or your money back!</p>
       </div>
+      
       <div class="col">
         <h5  data-aos="fade-up"><i class="bi bi-tag icon-color"></i>DAILY OFFERS</h5>
         <p data-aos="fade-up">New deals every day—discover fresh savings daily!</p>
