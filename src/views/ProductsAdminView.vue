@@ -21,7 +21,9 @@
               </div>
               <div class="mb-3">
                 <label for="productAmount" class="form-label">Amount</label>
-                <input type="text" class="form-control" id="productAmount" name="productAmount" v-model="amount">
+                <input type="number" class="form-control" id="productAmount" name="productAmount" v-model="amount">
+              </div>
+              <div class="mb-3">
                 <label for="productQuantity" class="form-label">Quantity</label>
                 <input type="number" class="form-control" id="productQuantity" name="productQuantity" v-model="quantity">
               </div>
@@ -30,8 +32,8 @@
                 <input type="text" class="form-control" id="productCategory" name="productCategory" v-model="category">
               </div>
               <div class="mb-3">
-                <label for="productImage" class="form-label">Drag Image here</label>
-                <input type="image" class="form-control" id="productImage" name="productImage" v-model="prod_url">
+                <label for="productImage" class="form-label">Enter image URL</label>
+                <input type="url" class="form-control" id="productImage" name="productImage" v-model="prod_url">
               </div>
               <div class="mb-3">
                 <label for="productDescription" class="form-label">Description</label>
@@ -47,7 +49,6 @@
       </div>
     </div>
 
-    <!-- Product Table -->
     <table id="productTable" class="table table-striped">
       <thead>
         <tr>
@@ -69,7 +70,53 @@
           <td>{{ product.category }}</td>
           <td>{{ product.prod_description }}</td>
           <td>
-            <button class="btn"><i class="fa-solid fa-trash"></i></button>  
+            <div class="admin-container">
+            </div>
+            
+            <div class="modal fade" id="editProduct" tabindex="-1" aria-labelledby="editProductLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editProductLabel">Edit Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="editProductForm">
+                      <div class="mb-3">
+                <label for="productName" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="productName" name="productName" v-model="product.prod_name">
+              </div>
+              <div class="mb-3">
+                <label for="productAmount" class="form-label">Amount</label>
+                <input type="number" class="form-control" id="productAmount" name="productAmount" v-model="product.amount">
+              </div>
+              <div class="mb-3">
+                <label for="productQuantity" class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="productQuantity" name="productQuantity" v-model="product.quantity">
+              </div>
+              <div class="mb-3">
+                <label for="productCategory" class="form-label">Category</label>
+                <input type="text" class="form-control" id="productCategory" name="productCategory" v-model="product.category">
+              </div>
+              <div class="mb-3">
+                <label for="productImage" class="form-label">Enter image URL</label>
+                <input type="url" class="form-control" id="productImage" name="productImage" v-model="product.prod_url">
+              </div>
+              <div class="mb-3">
+                <label for="productDescription" class="form-label">Description</label>
+                <input type="text" class="form-control" id="productDescription" name="productDescription" v-model="product.prod_description">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" @click="updateProduct(product.prod_id)">Save Product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button id="editProductBtn" class="btn" data-bs-toggle="modal" data-bs-target="#editProduct"><i class="fa-duotone fa-solid fa-pen"></i></button> -->
+    <button class="btn" @click="deleteProduct(product.prod_id)"><i class="fa-solid fa-trash"></i></button>  
             </td>
         </tr>
       </tbody>
@@ -85,8 +132,8 @@ export default {
       quantity:'',
       amount:'',
       category:'',
-      prod_description:'',
-      prod_url:''
+      prod_url:'',
+      prod_description:''
 
     }
   },
@@ -96,13 +143,16 @@ export default {
     },
     addProduct(){
       this.$store.dispatch('addProduct',this.$data)
+      location.reload()
     },
-    deleteUser(prod_id){
+    deleteProduct(prod_id){
       this.$store.dispatch('deleteProduct',prod_id)
       console.log('delete successful');
-      // location.reload()
       
-    }
+    },
+    updateProduct(prod_id){
+            this.$store.dispatch('updateProduct',prod_id, this.$data)
+        }
   },
   mounted() {
     this.fetchProducts()

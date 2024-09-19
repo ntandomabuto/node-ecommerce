@@ -21,6 +21,9 @@ export default createStore({
     setUser(state, value) {
       state.user = value
     },
+    updateProduct(state,product){
+      state.product=state.product.map(o => o.prod_id === product.prod_id? product:o)
+    },
     deleteUser(state,payload){
       state.user = state.user.filter(user => user.id !== payload);
     },
@@ -117,6 +120,15 @@ export default createStore({
         })
       }
     },
+    async updateProduct({ commit }, prod_id) {
+      let {data} = await axios.patch(`https://node-ecommerce-iqje.onrender.com/product/${prod_id}`)
+          .then(response => {
+              commit('updateProduct', response.data)
+          })
+          .catch(error => {
+              console.error(error)
+          })
+        },
     
     
   },
