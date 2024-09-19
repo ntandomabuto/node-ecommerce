@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="row gap-lg-5 justify-content-center" id="products">
-      <Card v-for="product in filteredProducts" :key="product.id">
+      <Card v-for="product in filteredProducts" :key="product.prod_id">
         <template v-slot:cardHeader>
           <div class="carousel-img-container">
             <img :src="product.prod_url" class="carousel-img" :alt="product.prod_name" loading="lazy">
@@ -26,7 +26,7 @@
               <div class="product-info">
                 <p class="product-description">{{ product.description }}</p>
                 <button class="btn view-product">
-                  <router-link :to="`/products/${product.id}`" class="link-no-decoration">
+                  <router-link :to="`/products/${product.prod_id}`" class="link-no-decoration">
                     View {{ product.category }}
                   </router-link>
                 </button>

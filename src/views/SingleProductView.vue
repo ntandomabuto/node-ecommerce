@@ -1,22 +1,18 @@
 <template>
     <div class="product-container">
       <div v-if="product" class="product-details">
-        <h1 class="product-title">{{ product?.productName }}</h1>
-        <Card class="product-card">
-         
-        </Card>
+        <h1 class="product-title">{{ product?.prod_name }}</h1>
+        <img :src="product.prod_url" alt="" width="50%"> <br>
+        R{{ product.amount }} <br>
+        {{ product.category  }} <br>
+        <h6>{{ product.prod_description }}</h6>
       </div>
       <!-- <Spinner v-else /> -->
     </div>
   </template>
     <script>
-    import Card from '@/components/Card.vue';
-    // import Spinner from '@/components/Spinner.vue';
     export default {
-      components: {
-        Card,
-        // Spinner
-      },
+      
       computed: {
         product() {
           return this.$store.state.product; 
@@ -37,9 +33,12 @@
       margin: 20px auto;
       font-family: 'Poppins', sans-serif;
     }
+    img{
+      border-radius:5rem ;
+    }
     .product-title {
       font-size: 2.5rem;
-      color: #FF6F61;
+      color: #4b2926;
       text-align: center;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(255, 111, 97, 0.3);
