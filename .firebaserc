@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "nodeecommerce-b56c3"
-  }
+    "default": "nodeecommerce-b56c3",
+    "staging": "nodeecommerce-b56c3"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
