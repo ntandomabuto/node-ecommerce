@@ -1,63 +1,41 @@
-[debug] [2024-09-18T10:49:38.471Z] ----------------------------------------------------------------------
-[debug] [2024-09-18T10:49:38.475Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
-[debug] [2024-09-18T10:49:38.476Z] CLI Version:   13.17.0
-[debug] [2024-09-18T10:49:38.476Z] Platform:      win32
-[debug] [2024-09-18T10:49:38.476Z] Node Version:  v20.16.0
-[debug] [2024-09-18T10:49:38.477Z] Time:          Wed Sep 18 2024 12:49:38 GMT+0200 (South Africa Standard Time)
-[debug] [2024-09-18T10:49:38.477Z] ----------------------------------------------------------------------
+[debug] [2024-09-19T10:07:01.017Z] ----------------------------------------------------------------------
+[debug] [2024-09-19T10:07:01.021Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-09-19T10:07:01.021Z] CLI Version:   13.17.0
+[debug] [2024-09-19T10:07:01.022Z] Platform:      win32
+[debug] [2024-09-19T10:07:01.022Z] Node Version:  v20.16.0
+[debug] [2024-09-19T10:07:01.022Z] Time:          Thu Sep 19 2024 12:07:01 GMT+0200 (South Africa Standard Time)
+[debug] [2024-09-19T10:07:01.022Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-09-18T10:49:38.602Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-09-18T10:49:38.603Z] > authorizing via signed-in user (ntandomabuto@gmail.com)
-[debug] [2024-09-18T10:49:38.603Z] [iam] checking project nodeecommerce-b56c3 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2024-09-18T10:49:38.606Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions [none]
-[debug] [2024-09-18T10:49:38.606Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions x-goog-quota-user=projects/nodeecommerce-b56c3
-[debug] [2024-09-18T10:49:38.607Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-09-18T10:49:40.812Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions 200
-[debug] [2024-09-18T10:49:40.812Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions {}
-[debug] [2024-09-18T10:49:40.813Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project nodeecommerce-b56c3:
+[debug] [2024-09-19T10:07:01.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-19T10:07:01.136Z] > authorizing via signed-in user (ntandomabuto@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
 
-  firebase.projects.get
-  firebasehosting.sites.update
-[debug] [2024-09-18T10:49:40.814Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 [none]
-[debug] [2024-09-18T10:49:41.700Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 403
-[debug] [2024-09-18T10:49:41.701Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2024-09-18T10:49:41.702Z] HTTP Error: 403, The caller does not have permission
-[debug] [2024-09-18T10:49:42.187Z] FirebaseError: HTTP Error: 403, The caller does not have permission
-    at responseToError (C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
-    at RetryOperation._fn (C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:305:77)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[error] 
-[error] Error: Failed to get Firebase project nodeecommerce-b56c3. Please make sure the project exists and your account has permission to access it.
-[debug] [2024-09-18T14:30:16.608Z] ----------------------------------------------------------------------
-[debug] [2024-09-18T14:30:16.614Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
-[debug] [2024-09-18T14:30:16.614Z] CLI Version:   13.17.0
-[debug] [2024-09-18T14:30:16.615Z] Platform:      win32
-[debug] [2024-09-18T14:30:16.615Z] Node Version:  v20.16.0
-[debug] [2024-09-18T14:30:16.615Z] Time:          Wed Sep 18 2024 16:30:16 GMT+0200 (South Africa Standard Time)
-[debug] [2024-09-18T14:30:16.615Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2024-09-18T14:30:16.734Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-09-18T14:30:16.735Z] > authorizing via signed-in user (ntandomabuto@gmail.com)
-[debug] [2024-09-18T14:30:16.735Z] [iam] checking project nodeecommerce-b56c3 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2024-09-18T14:30:16.738Z] > refreshing access token with scopes: []
-[debug] [2024-09-18T14:30:16.740Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2024-09-18T14:30:16.740Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2024-09-18T14:30:17.376Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2024-09-18T14:30:17.377Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2024-09-18T14:30:17.393Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions [none]
-[debug] [2024-09-18T14:30:17.393Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions x-goog-quota-user=projects/nodeecommerce-b56c3
-[debug] [2024-09-18T14:30:17.393Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-09-18T14:30:19.419Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions 200
-[debug] [2024-09-18T14:30:19.419Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nodeecommerce-b56c3:testIamPermissions {}
-[debug] [2024-09-18T14:30:19.419Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project nodeecommerce-b56c3:
+You're about to initialize a Firebase project in this directory:
 
-  firebase.projects.get
-  firebasehosting.sites.update
-[debug] [2024-09-18T14:30:19.420Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 [none]
-[debug] [2024-09-18T14:30:20.117Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 403
-[debug] [2024-09-18T14:30:20.117Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
-[debug] [2024-09-18T14:30:20.119Z] HTTP Error: 403, The caller does not have permission
-[debug] [2024-09-18T14:30:20.572Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+  C:\Users\Student\Desktop\workshop\nodejs\ecommerce\front\node-ecommerce
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-19T10:07:22.265Z] Using project from CLI flag: nodeecommerce-b56c3
+[debug] [2024-09-19T10:07:22.268Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 [none]
+[debug] [2024-09-19T10:07:23.001Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 403
+[debug] [2024-09-19T10:07:23.001Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nodeecommerce-b56c3 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-09-19T10:07:23.002Z] HTTP Error: 403, The caller does not have permission
+[debug] [2024-09-19T10:07:23.452Z] FirebaseError: HTTP Error: 403, The caller does not have permission
     at responseToError (C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
     at RetryOperation._fn (C:\Users\Student\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:305:77)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
