@@ -65,7 +65,6 @@
       </thead>
       <tbody id="table-users">
         <tr v-for="user in $store.state.user" :key="user.user_id">
-          <!-- <td>{{ user.user_id }}</td> -->
           <td><img v-bind:src="user.user_profile" alt=""></td>
           <td>{{ user.firstname }}</td>
           <td>{{ user.lastname }}</td>

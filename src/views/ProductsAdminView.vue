@@ -2,7 +2,7 @@
   <div id="products">
     <h1>Products Table</h1>
     <div class="admin-container">
-      <button id="adminSortProduct" class="btn btn-secondary">Sort</button>
+      <!-- <button id="adminSortProduct" class="btn btn-secondary">Sort</button> -->
       <button id="adminAddProductBtn" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#adminAddProduct">Add Product</button>
     </div>
 
@@ -17,35 +17,31 @@
             <form id="addProductForm">
               <div class="mb-3">
                 <label for="productName" class="form-label">Product Name</label>
-                <input type="text" class="form-control" id="productName" name="productName" required>
+                <input type="text" class="form-control" id="productName" name="productName" v-model="prod_name">
               </div>
               <div class="mb-3">
                 <label for="productAmount" class="form-label">Amount</label>
-                <input type="text" class="form-control" id="productAmount" name="productAmount" required>
+                <input type="text" class="form-control" id="productAmount" name="productAmount" v-model="amount">
                 <label for="productQuantity" class="form-label">Quantity</label>
-                <input type="number" class="form-control" id="productQuantity" name="productQuantity" required>
+                <input type="number" class="form-control" id="productQuantity" name="productQuantity" v-model="quantity">
               </div>
               <div class="mb-3">
                 <label for="productCategory" class="form-label">Category</label>
-                <input type="text" class="form-control" id="productCategory" name="productCategory" required>
+                <input type="text" class="form-control" id="productCategory" name="productCategory" v-model="category">
               </div>
               <div class="mb-3">
-                <label for="productPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="productPassword" name="productPassword" required>
-                <label for="productImage" class="form-label">Description</label>
-                <input type="text" class="form-control" id="productImage" name="productImage" required>
+                <label for="productImage" class="form-label">Drag Image here</label>
+                <input type="image" class="form-control" id="productImage" name="productImage" v-model="prod_url">
               </div>
               <div class="mb-3">
-                <label for="productProfile" class="form-label">Profile</label>
-                <input type="file" class="form-control" id="productProfile" name="productProfile">
-                <label for="productDescription" class="form-label">Image</label>
-                <input type="file" class="form-control" id="productDescription" name="productDescription">
+                <label for="productDescription" class="form-label">Description</label>
+                <input type="text" class="form-control" id="productDescription" name="productDescription" v-model="prod_description">
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" @click="saveProduct">Save Product</button>
+            <button type="button" class="btn btn-primary" @click="addProduct()">Save Product</button>
           </div>
         </div>
       </div>
@@ -55,16 +51,27 @@
     <table id="productTable" class="table table-striped">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Product Name</th>
+          <th>Product</th>
+          <th>Name</th>
           <th>Quantity</th>
           <th>Amount</th>
           <th>Category</th>
-          <th>Image</th>
           <th>Description</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody id="table-products">
+        <tr v-for="product in $store.state.products" :key="product.prod_id">
+          <td><img :src="product.prod_url" alt="" width="30%"></td>
+          <td>{{ product.prod_name }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>R{{ product.amount }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.prod_description }}</td>
+          <td>
+            <button class="btn"><i class="fa-solid fa-trash"></i></button>  
+            </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -72,33 +79,34 @@
 
 <script>
 export default {
+  data(){
+    return{
+      prod_name:'',
+      quantity:'',
+      amount:'',
+      category:'',
+      prod_description:'',
+      prod_url:''
+
+    }
+  },
   methods: {
-    saveProduct() {
-      console.log('Saving product...');
-      const form = document.getElementById('addProductForm');
-      const formData = new FormData(form);
-
-      const payload = {
-        prod_name: formData.get('productName'),
-        quantity: formData.get('productQuantity'),
-        amount: formData.get('productAmount'),
-        category: formData.get('productCategory')
-      };
-
-      console.log('Payload:', payload);
+    fetchProducts(){
+      this.$store.dispatch('fetchProducts')
+    },
+    addProduct(){
+      this.$store.dispatch('addProduct',this.$data)
+    },
+    deleteUser(prod_id){
+      this.$store.dispatch('deleteProduct',prod_id)
+      console.log('delete successful');
+      // location.reload()
+      
     }
   },
   mounted() {
-    const saveButton = document.getElementById('saveProduct');
-    if (saveButton) {
-      saveButton.addEventListener('click', this.saveProduct);
-    }
+    this.fetchProducts()
   },
-  beforeUnmount() {
-    const saveButton = document.getElementById('saveProduct');
-    if (saveButton) {
-      saveButton.removeEventListener('click', this.saveProduct);
-    }
-  }
+ 
 }
 </script>
