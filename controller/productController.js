@@ -26,7 +26,7 @@ const getOne = async (req,res)=>{
 
 const insertOne = async (req,res)=>{
     try {
-        let {prod_name,quantity,amount,category,prod_url} = req.body 
+        let {prod_name,quantity,amount,category,prod_url,prod_description} = req.body 
         await insertOneDb(prod_name,quantity,amount,category,prod_url,prod_description)
         res.send('Inserted a product')
         
